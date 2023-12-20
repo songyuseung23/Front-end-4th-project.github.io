@@ -1,0 +1,271 @@
+:root {
+    /* primary */
+    --Light-red: hsl(0, 100%, 67%);
+    --Orangey-yellow: hsl(39, 100%, 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+    /* gradient */
+    --Light-slate-blue-background: hsl(252, 100%, 67%);
+    --Light-royal-blue-background: hsl(241, 81%, 54%);
+    --Violet-blue-circle: hsla(256, 72%, 46%, .7);
+    --Persian-blue-circle: hsla(241, 72%, 46%, .2);
+
+    /* neutral */
+    --White: hsl(0, 0%, 100%);
+    --Pale-blue: hsl(221, 100%, 96%);
+    --Light-lavender: hsl(241, 100%, 89%);
+    --Dark-gray-blue: hsl(224, 30%, 27%);
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+body {
+    font-size: 18px;
+
+    margin: 0;
+    padding: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    margin: 0;
+    color: var(--Light-lavender);
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 500;
+
+    color: var(--Light-lavender);
+    margin: 0;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* header */
+
+header {
+    background: linear-gradient(0deg, var(--Light-royal-blue-background) 10%, var(--Light-slate-blue-background));
+    padding-bottom: 2.5rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+/* title */
+
+#title {
+    margin: 1.4rem auto 1rem auto;
+}
+
+#circle-container {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 4.5rem;
+    margin: .5rem auto;
+    background: linear-gradient(180deg, var(--Violet-blue-circle) 5%, hsla(241, 72%, 46%, .3), hsla(241, 72%, 46%, 0));
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#circle-container p {
+    margin: 0;
+}
+
+#total-score {
+    color: var(--White);
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+#total-score+p {
+    font-size: 1rem;
+}
+
+/* grade */
+
+#grade {
+    color: var(--White);
+    font-size: 1.6rem;
+    margin: .5rem auto;
+}
+
+#grade+p {
+    margin: 0 3rem;
+
+    text-align: center;
+}
+
+/* main */
+main {
+    padding: 0 1.8rem 1rem 1.8rem;
+}
+
+#summary {
+    width: 100%;
+    color: var(--Dark-gray-blue);
+
+    font-weight: 600;
+    text-align: start;
+
+    margin: 1.5rem auto;
+}
+
+.result-container {
+    border-radius: .8rem;
+    width: 100%;
+    height: 3rem;
+    margin-bottom: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 1rem;
+}
+
+.result-container>p {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-left: .5rem;
+}
+
+/* color each score */
+
+.score {
+    color: var(--Dark-gray-blue);
+    font-weight: 700;
+}
+
+.full {
+    color: hsl(0, 0%, 50%, .7);
+}
+
+#reaction {
+    background-color: hsla(0, 100%, 67%, .05);
+}
+
+#sub1 {
+    color: var(--Light-red);
+}
+
+#sub1::before {
+    content: url(assets/images/icon-reaction.svg);
+    position: absolute;
+    left: -.5rem;
+}
+
+#memory {
+    background-color: hsla(39, 100%, 56%, .05);
+}
+
+#sub2 {
+    color: var(--Orangey-yellow);
+}
+
+#sub2::before {
+    content: url(assets/images/icon-memory.svg);
+    position: absolute;
+    left: -.5rem;
+}
+
+#verbal {
+    background-color: hsla(166, 100%, 37%, .05);
+}
+
+#sub3 {
+    color: var(--Green-teal);
+}
+
+#sub3::before {
+    content: url(assets/images/icon-verbal.svg);
+    position: absolute;
+    left: -.5rem;
+}
+
+#visual {
+    background-color: hsla(234, 85%, 45%, .05);
+}
+
+#sub4 {
+    color: var(--Cobalt-blue);
+}
+
+#sub4::before {
+    content: url(assets/images/icon-visual.svg);
+    position: absolute;
+    left: -.5rem;
+}
+
+#continue {
+    background-color: var(--Dark-gray-blue);
+    color: var(--White);
+
+    padding: 1rem;
+    margin-top: .5rem;
+
+    border: none;
+    border-radius: 3rem;
+
+    width: 100%;
+
+    font-size: 1.2rem;
+}
+
+@media only screen and (min-width:900px) {
+    body {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .outer-container {
+        display: flex;
+        flex-direction: row;
+        border-radius: 2rem;
+        box-shadow: 2rem 2rem 5rem 0rem var(--Pale-blue);
+
+        width: 50%;
+        max-width: 700px;
+        min-width: 600px;
+    }
+
+    header {
+        width: 50%;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+    }
+
+    main {
+        width: 50%;
+    }
+
+    #circle-container {
+        width: 12rem;
+        height: 12rem;
+
+        border-radius: 7.5rem;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+}
